@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#171717" />
+    <meta name="description"
+        content="A focused typing speed test. Find your rhythm, track your accuracy, and beat your best." />
+    <title>TypeSprint - Typing test</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="script.js" defer></script>
+</head>
+
+<body>
+    <div class="app-shell">
+        <header class="topbar">
+            <a class="brand" href="index.html" aria-label="TypeSprint home">
+                <span>TypeSprint</span>
+            </a>
+            <div class="topbar-right">
+                <div class="personal-best" title="Your best result is saved on this device">
+                    <span>BEST</span>
+                    <strong><span id="best-wpm">0</span> <small>WPM</small></strong>
+                </div>
+            </div>
+        </header>
+
+        <main>
+            <section class="test" aria-labelledby="page-title">
+                <div class="intro-row">
+                    <div>
+                        <p class="eyebrow">TYPING TEST</p>
+                        <h1 id="page-title">Find your pace<span>.</span></h1>
+                    </div>
+                    <div class="duration-picker" role="group" aria-label="Test duration">
+                        <button class="duration-option" type="button" data-duration="15"
+                            aria-pressed="false">15s</button>
+                        <button class="duration-option selected" type="button" data-duration="30"
+                            aria-pressed="true">30s</button>
+                        <button class="duration-option" type="button" data-duration="60"
+                            aria-pressed="false">60s</button>
+                    </div>
+                </div>
+
+                <div class="stats-bar" aria-label="Live test statistics">
+                    <div class="stat">
+                        <span class="stat-label">TIME</span>
+                        <strong class="stat-value timer-value" id="timer">30<span>s</span></strong>
+                    </div>
+                    <div class="stat-divider" aria-hidden="true"></div>
+                    <div class="stat">
+                        <span class="stat-label">WPM</span>
+                        <strong class="stat-value" id="wpm">0<span> wpm</span></strong>
+                    </div>
+                    <div class="stat-divider" aria-hidden="true"></div>
+                    <div class="stat">
+                        <span class="stat-label">ACCURACY</span>
+                        <strong class="stat-value" id="accuracy">100<span>%</span></strong>
+                    </div>
+                    <div class="progress-track" aria-hidden="true">
+                        <span class="progress-fill" id="progress-fill"></span>
+                    </div>
+                </div>
+
+                <div class="typing-panel" id="typing-panel">
+                    <div class="panel-topline">
+                        <span class="panel-label">PASSAGE</span>
+                        <span class="panel-hint" id="panel-hint">Click to begin</span>
+                    </div>
+                    <div class="passage" id="passage"></div>
+                    <textarea id="typing-input" class="typing-input" aria-label="Type the displayed passage here"
+                        autocomplete="off" autocapitalize="off" spellcheck="false" enterkeyhint="go"></textarea>
+                    <div class="panel-bottomline">
+                        <span></span>
+                        <span id="character-count">0 characters</span>
+                    </div>
+                </div>
+
+                <section class="result-panel" id="result-panel" aria-labelledby="result-title" hidden>
+                    <div class="result-heading">
+                        <span class="result-icon" aria-hidden="true">✓</span>
+                        <div>
+                            <p class="eyebrow">RESULT</p>
+                            <h2 id="result-title">Test complete</h2>
+                        </div>
+                    </div>
+                    <div class="result-stats">
+                        <div class="result-stat result-stat-primary">
+                            <span>WORDS PER MINUTE</span>
+                            <strong id="result-wpm">0</strong>
+                        </div>
+                        <div class="result-stat">
+                            <span>ACCURACY</span>
+                            <strong id="result-accuracy">100<small>%</small></strong>
+                        </div>
+                        <div class="result-stat">
+                            <span>TOTAL MISTAKES</span>
+                            <strong id="result-mistakes">0</strong>
+                        </div>
+                    </div>
+                    <p class="result-note" id="result-note">Your best is saved right here on this device.</p>
+                </section>
+
+                <div class="actions-row">
+                    <button class="button button-quiet" id="restart-button" type="button">Restart</button>
+                    <button class="button button-primary" id="new-test-button" type="button">New test</button>
+                </div>
+            </section>
+        </main>
+
+    </div>
+</body>
+
+</html>
